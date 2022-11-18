@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>MdvmPong - MDVM</title>
+
+  <!-- meta -->
+  <meta charset="UTF-8" />
+
+  <!-- [name] -->
+  <meta name="viewport" content="width=device-width, initial-scale=0.4, minimum-scale=0.4, maximum-scale=0.4, shrink-to-fit=no" />
+  <meta name="author" content="Sr.Caveira" />
+  <meta name="keywords" content="#" />
+  <meta name="description" content="Um game onde você precisa contra-atacar a bolinha e não deixar que ela encoste na parede." />
+  <meta name="theme-color" content="#000" />
+  <meta name="copyright" content="© 2021, Sr.Caveira" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="noarchive" />
+  <meta name="generator" content="VS Code, Sublime Text 3" />
+  <meta name="rating" content="general" />
+
+  <!-- [http-equiv] -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-language" content="pt-BR, en-US" />
+
+  <!-- links -->
+  <link rel="icon" type="image/png" href="./assets/images/cabeca-do-madson.png" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./assets/js/sprites.js"></script>
+</head>
+<body>
+  <canvas id="mycanvas" height="600" width="600">O seu browser não suporta este elemento!</canvas>
+  <script src="./assets/js/script.js"></script>
+
+  <script>
+    if (localStorage.getItem('notshow') != 'true') {
+      Swal.fire({
+        icon: 'info',
+        title: 'Como jogar?',
+        html: '<p>- Player 1</p>(W) mover para cima<br />(S) mover para baixo<br/><br /><p>- Player 2</p>(<i class="fa fa-arrow-up" aria-hidden="true"></i>) mover para cima<br />(<i class="fa fa-arrow-down" aria-hidden="true"></i>) mover para baixo',
+        footer: '<i class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;e&nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;são as setinhas do teclado.',
+        showDenyButton: true,
+        confirmButtonText: 'OK',
+        denyButtonText: `Ocultar mensagem`,
+      }).then((result) => {
+        if (result.isDenied) {
+          localStorage.setItem('notshow', 'true');
+          Swal.fire('Este aviso de como jogar não irá aparecer novamente!', '', 'info');
+        }
+      });
+    }
+  </script>
+
+  <center>
+    <br />
+    <button onclick="canvas.requestFullscreen();">Clique para tela cheia</button>
+  </center>
+</body>
+</html>

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&family=Roboto:wght@100&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+	background: #363232;
+	overflow: hidden;
+}
+
+header.header {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	height: 7%;
+	text-align: center;
+	background: #292929;
+	color: #fff;
+	z-index: 1;
+	border-bottom: 3px solid #4f4e4e;
+}
+
+header.header h1 {
+	font-size: 2rem;
+}
+
+header.header img {
+	max-width: 53px;
+}
+
+div.container {
+	display: flex;
+	height: 100vh;
+	width: 100vw;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	transform: translateY(30px);
+}
+
+div.container div.box {
+	position: relative;
+	display: flex;
+	width: 330px;
+	height: 380px;
+	background: #454343;
+	border-radius: 10px;
+	margin: 10px;
+	transition: .3s transform ease-in, .3s border ease-in;
+	cursor: pointer;
+}
+
+div.container div.box:hover {
+	transform: scale(1.1);
+	border: 1px solid #fff;
+}
+
+div.container div.box:active {
+	transform: scale(1.0);
+	transition: .1s transform ease-in;
+}
+
+div.container div.box div.box-header {
+	position: absolute;
+	background: #292929;
+	width: 100%;
+	height: 15%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	text-align: center;
+	border-bottom: 3px solid #4f4e4e;
+	cursor: default;
+}
+
+div.container div.box div.box-header span {
+	color: #fff;
+	font-size: 22px;
+	line-height: 56px;
+	font-weight: bold;
+}
+
+div.container div.box div.box-photo {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+div.container div.box div.box-photo img {
+	max-width: 330px;
+	max-height: 230px;
+	transform: translateY(20px);
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+/* mobile  */
+
+@media screen and (max-width: 700px) {
+	html,
+	body {
+		overflow: scroll;
+		margin-bottom: 50px;
+	}
+
+	div.container {
+		transform: translateY(100px);
+	}
+
+	div.container div.box {
+		margin: 15px;
+	}
+}

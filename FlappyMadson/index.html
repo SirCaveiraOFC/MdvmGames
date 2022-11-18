@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <title>FlappyMadson - MDVM</title>
+    <!-- meta -->
+    <meta htpp-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000" />
+    <meta property="og:image" content="https://i.dlpng.com/static/png/6781141_preview.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <!-- link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="icon" href=".././assets/images/cabeca-do-madson.png">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  </head>
+  <script type="text/javascript">
+    function laserClick() {
+      var audio = new Audio("./efeitos/laser-click.mp3");
+      audio.play();
+    }
+  </script>
+  <body onClick="laserClick(); canvas.requestFullscreen();" class="fadeIn">
+    <div class="container-canvas">
+    <canvas id="game-canvas" width="320" height="480"></canvas>
+    <div class="container-canvas">
+    <style>
+      @charset "utf-8"; 
+      /* CSS Document */
+      @-webkit-keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; } 
+      }
+      @-moz-keyframes fadeIn {
+      0% { opacity: 0;}
+      100% { opacity: 1; }
+      }
+      @-o-keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+      }
+      @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+      }
+      .fadeIn {
+      -webkit-animation: fadeIn 3s ease-in-out;
+      -moz-animation: fadeIn 3s ease-in-out;
+      -o-animation: fadeIn 3s ease-in-out;
+      animation: fadeIn 3s ease-in-out;
+      }      
+      body {
+      background-color: #000;
+      cursor: cell;
+      }
+      .top {
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      }
+      p {
+      font-family: VT323;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+      color: black;
+      font-size: 30pt;
+      }
+      .container-canvas {
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      display: flex;
+      }
+      canvas {
+      cursor: cell;
+      }
+    </style>
+    <script src="./jogo.js"></script>
+  </body>
+</html>

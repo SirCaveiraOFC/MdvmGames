@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<title>Input Letter - MDVM</title>
+
+		<!-- meta -->
+		<meta charset="UTF-8" />
+
+		<!-- [name] -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+		<meta name="author" content="Sr.Caveira" />
+		<meta name="keywords" content="#" />
+		<meta name="description" content="Um game onde você precisa inserir palavras de acordo com o MDVM ÁRABE!" />
+		<meta name="theme-color" content="" />
+		<meta name="copyright" content="© 2021, Sr.Caveira" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="noarchive" />
+		<meta name="generator" content="VS Code, Sublime Text 3" />
+		<meta name="rating" content="general" />
+
+		<!-- [http-equiv] -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="content-language" content="pt-BR, en-US" />
+		<meta http-equiv="Cache-control" content="no-cache" />
+		<meta http-equiv="Expires" content="-1" />
+
+		<!-- links -->
+		<link rel="icon" type="image/png" href="./assets/images/cabeca-do-madson.png" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+		<!-- scripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	</head>
+	<body>
+		<header class="header">
+			<img src="./assets/images/cabeca-do-madson.png" width="50" />
+			<h1>Input Letter - <span>MDVM</span> | Seu Recorde: <span id="recorde">0</span></h1>
+		</header>
+
+		<section class="section-words">
+			<section class="section-words-box" id="words-section"></section>
+		</section>
+
+		<section class="section-input-input">
+			<input type="text" id="letter" placeholder="..." oncopy="return false" onpaste="return false" onautocomplete="return false" autocomplete="off" autofocus />
+			<div class="timer-box">
+				<i class="fa fa-clock-o"></i>
+				<span id="time_game">1:00</span>
+			</div>
+		</section>
+
+		<div class="container-section-result" id="container-section-result">
+			<section class="section-result">
+				<div class="result-header">
+					<h1>Resultado</h1>
+				</div>
+
+				<h1 id="result-wpm"></h1>
+
+				<small>(palavras por minuto)</small>
+				<br /><br /><br />
+				<table>
+					<tr>
+						<th align="left" scope="col">Teclas</th>
+						<td align="right">(<span id="result-wpm-correct-b" style="color: #206915; font-weight: bold;"></span> | <span id="result-wpm-wrong-b" style="color: #ff0000; font-weight: bold;"></span>) <span id="total_teclas"></span></td>
+					</tr>
+					<tr>
+						<th align="left" scope="col">Palavras<br />Corretas</th>
+						<td align="right" id="result-wpm-correct" style="color: #206915; font-weight: bold;"></td>
+					</tr>
+					<tr>
+						<th align="left" scope="col">Palavras Incorretas</th>
+						<td align="right" id="result-wpm-wrong" style="color: #ff0000; font-weight: bold;"></td>
+					</tr>
+				</table>
+				<button onclick="window.location.reload();"><i class="fa fa-refresh"></i>&nbsp;Reiniciar</button>
+			</section>
+		</div>
+		<script src="./assets/js/script.js"></script>
+	</body>
+</html>

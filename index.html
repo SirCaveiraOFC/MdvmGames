@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<title>MDVM GAMES</title>
+
+		<!-- meta -->
+		<meta charset="UTF-8" />
+
+		<!-- [name] -->
+		<meta name="viewport" content="width=device-width, initial-scale=0.7, shrink-to-fit=no" />
+		<meta name="author" content="Sr.Caveira" />
+		<meta name="keywords" content="#" />
+		<meta name="description" content="Um site apenas de jogos e coisas relacionadas ao Madson Danilo Viana Macedo" />
+		<meta name="theme-color" content="#" />
+		<meta name="copyright" content="© 2021, Sr.Caveira" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="noarchive" />
+		<meta name="generator" content="VS Code, Sublime Text 3" />
+		<meta name="rating" content="general" />
+
+		<!-- [http-equiv] -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="content-language" content="pt-BR, en-US" />
+		<meta http-equiv="Cache-control" content="no-cache" />
+		<meta http-equiv="Expires" content="-1" />
+
+		<!-- links -->
+		<link rel="icon" type="image/png" href="./assets/images/cabeca-do-madson.png" />
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+		<!-- scripts -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	</head>
+	<body>
+		<header class="header">
+			<img src="./assets/images/cabeca-do-madson.png" />
+			<h1>MDVM GAMES&nbsp;<i class="fa fa-gamepad" aria-hidden="true"></i></h1>
+			
+		</header>
+		<div class="container">
+			<script>
+				let box = {
+					images: [
+						'input-letter-icon',
+						'mdvm-ball-icon',
+						'flappy-madson-icon',
+						'mdvm-pong-icon'
+					],
+
+					urls: [
+						'InputLetter',
+						'MdvmBall',
+						'FlappyMadson',
+						'MdvmPong'
+					],
+
+					names: [
+						'Input Letter',
+						'Mdvm ball',
+						'Flappy Madson',
+						'Mdvm Pong'
+					]
+				};
+
+				function alerta (id, icon, title, text, footer) {
+					document.getElementById(id).onclick = () => {
+						Swal.fire({
+							icon: icon,
+							title: title,
+							text: text,
+							footer: (footer == '' ? '112.791.104-06' : footer)
+						});
+					}
+				}
+
+				for (let i = 0, len = box.images.length; i < len; i++) {
+					document.write(`<div class="box" id="${i}" onclick="window.location.href = '${box.urls[i]}'"><div class="box-header"><span>${box.names[i]}</span></div><div class="box-photo"><img src="./assets/images/${box.images[i]}.jpg" /></div></div>`);
+				}
+
+				if (screen.width <= 480) {
+					alerta('3', 'warning', 'Alerta', 'Este game não é compatível com celulares.', 'Você só pode jogar no PC!');
+				}
+			</script>
+		</div>
+	</body>
+</html>
